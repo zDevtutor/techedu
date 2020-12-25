@@ -3,6 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="apple-touch-icon" sizes="180x180" href="img/fav-icon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/fav-icon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/fav-icon/favicon-16x16.png">
+		<link rel="manifest" href="img/fav-icon/site.webmanifest">
+		
 		<!-- Fontawesome -->
 		<script src="https://kit.fontawesome.com/46a05c488f.js" crossorigin="anonymous"></script>
 		<!-- Bootstrap -->
@@ -16,10 +21,10 @@
 		<link rel="stylesheet" href="css/style.css" />
 		<title>Techedu - Homepage</title>
 	</head>
-	<body id="home">
+	<body data-bs-spy="scroll" data-bs-target="main-nav" id="home">
 
 		<!-- Navbar -->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<nav id="main-nav" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<div class="container">
 				<a class="navbar-brand fw-bold text-uppercase" href="index.html">Tech<span class="text-primary">Edu</span></a>
 				<button
@@ -48,7 +53,7 @@
 							<a class="nav-link" href="#about">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#projects">Projects</a>
+							<a class="nav-link" href="#project-categories">Projects</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#contact">Contact</a>
@@ -412,7 +417,8 @@
 		></script>
 		<script>
 			// Get current year in copyright
-			document.getElementById('year').innerText(new Date().getFullYear());
+			var currentYear = document.getElementById('year');
+			currentYear.innerText = new Date().getFullYear();
 
 			var scrollSpy = new bootstrap.ScrollSpy(document.body, {
 				target: '#main-nav',
